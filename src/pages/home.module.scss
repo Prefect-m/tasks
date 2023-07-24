@@ -1,0 +1,13 @@
+// MAIN CONTAINER
+.homeContainer {
+	max-width: 92%;
+	width: 100%;
+	padding-left: 77px;
+	padding-right: 77px;
+	margin: 0 auto;
+}
+.posts {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
