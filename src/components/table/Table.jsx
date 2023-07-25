@@ -23,48 +23,44 @@ export const Table = ({ posts }) => {
 	}
 
 	return (
-		<div className={styles.wrap}>
-			<table className={styles.table}>
-				<thead>
-					<tr>
-						<th>
-							id
-							<button>
-								<ArrowDownIcon />
-							</button>
-						</th>
-						<th>
-							Заголовок
-							<button>
-								<ArrowDownIcon />
-							</button>
-						</th>
-						<th>
-							Описание
-							<button>
-								<ArrowDownIcon />
-							</button>
-						</th>
+		<table className={styles.table}>
+			<thead className={styles.tableHead}>
+				<tr className={styles.tableRow}>
+					<th className={styles.tableTitle}>
+						id
+						<button>
+							<ArrowDownIcon />
+						</button>
+					</th>
+					<th className={styles.tableTitle} onClick={sortHandler}>
+						Заголовок
+						<button>
+							<ArrowDownIcon />
+						</button>
+					</th>
+					<th className={styles.tableTitle}>
+						Описание
+						<button>
+							<ArrowDownIcon />
+						</button>
+					</th>
+				</tr>
+			</thead>
+			<tbody className={styles.tableBody}>
+				{data.map((post) => (
+					<tr key={post.id} className={styles.tableBodyRow}>
+						<td className={styles.tableBodyCol}>
+							<span>{post.id}</span>
+						</td>
+						<td className={styles.tableBodyCol}>
+							<p className={styles.postTilte}>{post.title}</p>
+						</td>
+						<td className={styles.tableBodyCol}>
+							<p>{post.body}</p>
+						</td>
 					</tr>
-				</thead>
-				<tbody>
-					{data.map((post) => (
-						<tr key={post.id}>
-							<td>
-								<span>{post.id}</span>
-							</td>
-							<td>
-								<p onClick={sortHandler} className={styles.postTilte}>
-									{post.title}
-								</p>
-							</td>
-							<td>
-								<p>{post.body}</p>
-							</td>
-						</tr>
-					))}
-				</tbody>
-			</table>
-		</div>
+				))}
+			</tbody>
+		</table>
 	)
 }

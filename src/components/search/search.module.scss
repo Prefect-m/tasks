@@ -1,4 +1,5 @@
 @import "../../styles/vars";
+@import "../../styles/media";
 
 .search {
 	padding-top: 23px;
@@ -39,6 +40,12 @@
 		}
 		& button {
 			z-index: 2;
+		}
+		@include tablet {
+			padding: 10px 20px;
+		}
+		@include mobile {
+			max-width: 100%;
 		}
 	}
 	.searchButton {

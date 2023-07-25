@@ -1,11 +1,6 @@
 // import { API_URI } from "../../API"
 import axios from "axios"
-import {
-	CLEAR_SEARCH,
-	FETCH_POSTS_SUCCESS,
-	SEARCH_POST,
-	TOTAL_COUNT_POSTS,
-} from "../types"
+import { FETCH_POSTS_SUCCESS, SEARCH_POST, TOTAL_COUNT_POSTS } from "../types"
 
 export function fetchPosts(limit, page) {
 	return async (dispatch) => {
